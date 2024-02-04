@@ -23,10 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(
-          font.className,
-          "min-h-screen bg-background antialiased"
-        )}
+        className={cn(font.className, "min-h-screen bg-background antialiased")}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}

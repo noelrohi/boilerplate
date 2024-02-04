@@ -1,12 +1,11 @@
 import { ThemeProvider } from "@/components/providers/theme";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { siteConfig } from "@/config/site";
+import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 
-const font = Poppins({ weight: ["400", "800"], subsets: ["latin"] });
 const title = siteConfig.name;
 const description = siteConfig.description;
 
@@ -23,7 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(font.className, "min-h-screen bg-background antialiased")}
+        className={cn(
+          fontMono.variable,
+          fontSans.variable,
+          "min-h-screen bg-background font-sans antialiased",
+        )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}

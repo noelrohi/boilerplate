@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/providers/theme";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site";
 import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
@@ -31,6 +32,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <TailwindIndicator />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

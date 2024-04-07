@@ -11,7 +11,7 @@
 
     /* Strictness */
     "strict": true,
-    "noUncheckedIndexedAccess": true,
+    // "noUncheckedIndexedAccess": true,
     "checkJs": true,
 
     /* Bundled projects */
@@ -30,13 +30,13 @@
     }
   },
   "include": [
-    ".eslintrc.cjs",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.cjs",
-    "**/*.js",
-    ".next/types/**/*.ts"
+    "*.js",
+    ".next/types/**/*.ts",
+    "next.config.js",
+    "next.config.mjs"
   ],
   "exclude": ["node_modules"]
 }

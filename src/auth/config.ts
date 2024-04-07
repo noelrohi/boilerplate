@@ -26,8 +26,11 @@ export const authConfig = {
         id: user.id,
       },
     }),
-    authorized({ request, auth }) {
-      return !!auth?.user;
+    authorized({ request: { nextUrl }, auth }) {
+      const isLoggedIn = !!auth?.user;
+      const isOnPublicPage = nextUrl.pathname === "/";
+      if (isOnPublicPage) return true;
+      return isLoggedIn;
     },
   },
 } satisfies NextAuthConfig;

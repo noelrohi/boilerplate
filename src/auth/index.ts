@@ -2,8 +2,8 @@ import { env } from "@/env";
 import NextAuth from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 import GoogleProvider from "next-auth/providers/google";
-import { authConfig } from "./config";
 import { cache } from "react";
+import { authConfig } from "./config";
 
 export type { Session } from "next-auth";
 

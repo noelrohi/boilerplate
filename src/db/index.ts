@@ -1,7 +1,7 @@
+import * as schema from "@/db/schema";
 import { env } from "@/env";
 import { Pool } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-serverless";
-import * as schema from "@/db/schema";
 
 export { projectTable as tableCreator } from "@/db/utils";
 

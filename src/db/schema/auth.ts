@@ -1,6 +1,6 @@
+import { projectTable } from "@/db/utils";
 import type { AdapterAccount } from "@auth/core/adapters";
 import { integer, primaryKey, text, timestamp } from "drizzle-orm/pg-core";
-import { projectTable } from "@/db/utils";
 
 export const users = projectTable("user", {
   id: text("id").notNull().primaryKey(),

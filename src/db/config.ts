@@ -8,7 +8,7 @@ export default defineConfig({
   dbCredentials: {
     connectionString: env.DATABASE_URL,
   },
-  tablesFilter: [env.TABLE_PREFIX],
+  tablesFilter: [`${env.TABLE_PREFIX}*`],
   verbose: true,
   strict: true,
 });

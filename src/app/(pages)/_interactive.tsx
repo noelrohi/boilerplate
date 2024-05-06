@@ -1,8 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState, useEffect } from "react";
 import { toast } from "sonner";
 import { createPost } from "./_actions";
 
@@ -21,7 +20,7 @@ export function Form({
   loadingMessage = "Please wait ...",
   ...props
 }: FormProps) {
-  const [state, formAction] = useFormState(
+  const [state, formAction, isPending] = useActionState(
     formActions[actionString],
     undefined,
   );
@@ -33,19 +32,9 @@ export function Form({
   return (
     <form {...props} action={formAction}>
       {children}
+      <Button type="submit" disabled={isPending}>
+        {isPending ? loadingMessage : "Submit"}
+      </Button>
     </form>
-  );
-}
-
-export function SubmitButton({
-  children,
-  disabled,
-  ...props
-}: React.ComponentPropsWithoutRef<typeof Button>) {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" {...props} disabled={disabled || pending}>
-      {children}
-    </Button>
   );
 }

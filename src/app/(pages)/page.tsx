@@ -1,10 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { db } from "@/db";
-import { posts } from "@/db/schema";
-import { revalidateTag, unstable_cache } from "next/cache";
 import { Suspense } from "react";
-import { Form, SubmitButton } from "./_interactive";
+import { Form } from "./_interactive";
 
 export default function Home() {
   return (
@@ -40,7 +37,6 @@ function CreateForm() {
         name="title"
         className="max-w-xs"
       />
-      <SubmitButton>Create</SubmitButton>
     </Form>
   );
 }

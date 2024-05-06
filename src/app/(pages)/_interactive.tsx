@@ -20,7 +20,7 @@ export function Form({
   loadingMessage = "Please wait ...",
   ...props
 }: FormProps) {
-  const [state, formAction, pending] = useActionState(
+  const [state, formAction, isPending] = useActionState(
     formActions[actionString],
     undefined,
   );
@@ -32,8 +32,8 @@ export function Form({
   return (
     <form {...props} action={formAction}>
       {children}
-      <Button type="submit" disabled={pending}>
-        Submit
+      <Button type="submit" disabled={isPending}>
+        {isPending ? loadingMessage : "Submit"}
       </Button>
     </form>
   );

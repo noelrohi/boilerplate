@@ -2,7 +2,7 @@
 
 import { db } from "@/db";
 import { posts } from "@/db/schema";
-import { revalidatePath, revalidateTag } from "next/cache";
+import { revalidatePath } from "next/cache";
 
 type State =
   | {

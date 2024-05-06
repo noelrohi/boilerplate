@@ -21,6 +21,9 @@
             "suspicious": {
                 "noArrayIndexKey": "off"
             },
+            "correctness": {
+                "noUnusedImports": "error"
+            },
             "a11y": {
                 "useButtonType": "off",
                 "noSvgWithoutTitle": "off"

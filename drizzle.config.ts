@@ -2,11 +2,11 @@ import { env } from "@/env";
 import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
-  schema: "./src/db/schema",
-  driver: "pg",
-  out: "./src/db",
+  schema: "src/db/schema",
+  dialect: "postgresql",
+  out: "migrations",
   dbCredentials: {
-    connectionString: env.DATABASE_URL,
+    url: env.DATABASE_URL,
   },
   tablesFilter: [`${env.TABLE_PREFIX}*`],
   verbose: true,

@@ -3,14 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "ui": "pnpm dlx shadcn-ui@latest",
-    "db:push": "drizzle-kit push:pg --config src/db/config.ts",
-    "db:introspect": "drizzle-kit introspect:pg --config src/db/config.ts",
-    "db:studio": "drizzle-kit studio --config src/db/config.ts",
-    "fmt": "pnpm biome format ./src --write && pnpm biome check ./src --apply-unsafe"
+    "db": "drizzle-kit",
+    "fmt": "biome format src --write && biome check src --apply-unsafe"
   },
   "dependencies": {
     "@auth/core": "^0.30.0",
@@ -39,7 +37,7 @@
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
-    "drizzle-kit": "^0.20.18",
+    "drizzle-kit": "^0.21.4",
     "jiti": "^1.21.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
